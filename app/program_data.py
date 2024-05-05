@@ -34,24 +34,6 @@ class ProgramData:
     def get_assistant_model(self) -> AnyStr:
         return self.__config["assistant"]["model"]
 
-    def append_to_conversation(self, row: Tuple) -> None:
-
-        if not isinstance(row, Tuple):
-            row = tuple(row)
-
-        if self.get_save_conversation_enabled():
-            if os.path.exists(CONVERSATION_FILENAME):
-                with open(CONVERSATION_FILENAME, mode="w") as csvfile:
-                    writer = csv.writer(csvfile)
-                    writer.writerow(row)
-            else:
-
-                with open(CONVERSATION_FILENAME, mode="w") as csvfile:
-                    writer = csv.writer(csvfile)
-                    writer.writerow(["author", "timestamp", "content"])
-
-                self.append_to_conversation(row)
-
     def remove_audio(self, index: int) -> None:
         """
         Remove an audio file from the playlist at the specified index.
@@ -188,7 +170,7 @@ class ProgramData:
         :return: The path to the playlist source directory. (AnyStr)
         """
 
-        return self.__config["playlist_source"]
+        return os.path.expanduser(self.__config["playlist_source"])
 
     def set_playlist_path(self, path: AnyStr) -> None:
         """
