@@ -1,6 +1,6 @@
 {
     "exercises": [],
-    "playlist_source": "/home/nemo/Music",
+    "playlist_source": "~/Music",
     "assistant": {
         "model": "gpt-3.5-turbo",
         "token": ""
