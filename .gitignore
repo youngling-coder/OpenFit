@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.ui
+*.qrc
+app/img/*.png
+*.spec
+build/
+dist/
+.idea/

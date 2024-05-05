@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=OpenFit
+Comment=Control Your Body.
+Type=Application
+Terminal=false
+Exec=OpenFit
+Icon=/usr/share/icons/OpenFit/icon.png
